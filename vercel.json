@@ -4,48 +4,34 @@
     {
       "src": "package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "build" }
+      "config": { 
+        "distDir": "build"
+      }
     }
   ],
   "routes": [
     {
       "src": "/static/(.*)",
-      "headers": { "cache-control": "s-maxage=31536000, immutable" },
+      "headers": { 
+        "cache-control": "s-maxage=31536000, immutable" 
+      },
       "dest": "/static/$1"
     },
-    { 
-      "src": "/favicon.ico", 
-      "headers": { "cache-control": "public, max-age=3600" },
-      "dest": "/favicon.ico" 
+    {
+      "src": "/(favicon\\.ico|logo192\\.png|logo512\\.png|manifest\\.json|robots\\.txt)$",
+      "headers": {
+        "cache-control": "public, max-age=3600",
+        "access-control-allow-origin": "*"
+      }
     },
-    { 
-      "src": "/logo192.png", 
-      "headers": { "cache-control": "public, max-age=3600" },
-      "dest": "/logo192.png" 
-    },
-    { 
-      "src": "/logo512.png", 
-      "headers": { "cache-control": "public, max-age=3600" },
-      "dest": "/logo512.png" 
-    },
-    { 
-      "src": "/manifest.json", 
-      "headers": { 
-        "cache-control": "public, max-age=0, must-revalidate",
-        "access-control-allow-origin": "*",
-        "access-control-allow-methods": "GET"
-      },
-      "dest": "/manifest.json" 
-    },
-    { "src": "/robots.txt", "dest": "/robots.txt" },
-    { 
-      "src": "/(.*)", 
+    {
+      "src": "/(.*)",
       "headers": {
         "x-content-type-options": "nosniff",
         "x-frame-options": "DENY",
         "x-xss-protection": "1; mode=block"
       },
-      "dest": "/index.html" 
+      "dest": "/index.html"
     }
   ]
-} 
+}
