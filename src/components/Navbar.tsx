@@ -219,7 +219,6 @@ const MobileMenu = styled.div<{ isOpen: boolean }>`
 `;
 
 const CloseButton = styled.button`
-  display: none;
   position: absolute;
   top: 1.2rem;
   right: 1.2rem;
@@ -230,14 +229,11 @@ const CloseButton = styled.button`
   cursor: pointer;
   padding: 0.5rem;
   transition: all 0.3s ease;
+  display: block;
   
   &:hover {
     color: #cccccc;
     transform: rotate(90deg);
-  }
-  
-  @media (max-width: 480px) {
-    display: block;
   }
 `;
 
@@ -294,9 +290,7 @@ const Navbar: React.FC = () => {
       </NavbarContainer>
       
       <MobileMenu isOpen={mobileMenuOpen}>
-        {mobileMenuOpen && (
-          <CloseButton onClick={closeMobileMenu}>×</CloseButton>
-        )}
+        <CloseButton onClick={closeMobileMenu}>×</CloseButton>
         <Link to="/" className={location.pathname === '/' ? 'active' : ''} onClick={closeMobileMenu}>
           Home
         </Link>
@@ -314,4 +308,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;
