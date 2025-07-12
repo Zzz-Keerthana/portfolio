@@ -77,6 +77,14 @@ const ProjectsSection = styled.section`
   background: #000000;
   color: #ffffff;
   min-height: 100vh;
+  
+  @media (max-width: 768px) {
+    padding: 6rem 3%;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 5rem 2%;
+  }
 `;
 
 const ProjectsTitle = styled.h2`
@@ -89,6 +97,14 @@ const ProjectsTitle = styled.h2`
   
   @media (max-width: 768px) {
     font-size: 2rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.8rem;
+  }
+  
+  @media (max-width: 360px) {
+    font-size: 1.6rem;
   }
 `;
 
@@ -107,6 +123,15 @@ const ProjectsSubtitle = styled.p`
     font-size: 1rem;
     margin-bottom: 3rem;
   }
+  
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  @media (max-width: 360px) {
+    font-size: 0.85rem;
+  }
 `;
 
 const ProjectsGrid = styled.div`
@@ -118,6 +143,11 @@ const ProjectsGrid = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
 `;
 
@@ -147,12 +177,26 @@ const ProjectCard = styled.div`
   &:hover h3 {
     color: #64ffda;
   }
+  
+  @media (max-width: 480px) {
+    &:hover {
+      transform: translateY(-8px);
+    }
+  }
 `;
 
 const ProjectImage = styled.div`
   height: 240px;
   overflow: hidden;
   position: relative;
+  
+  @media (max-width: 768px) {
+    height: 200px;
+  }
+  
+  @media (max-width: 480px) {
+    height: 180px;
+  }
   
   &::after {
     content: '';
@@ -179,6 +223,14 @@ const ProjectContent = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  
+  @media (max-width: 768px) {
+    padding: 1.2rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 1rem;
+  }
 `;
 
 const ProjectTitle = styled.h3`
@@ -191,6 +243,14 @@ const ProjectTitle = styled.h3`
   @media (max-width: 768px) {
     font-size: 1.2rem;
   }
+  
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+  }
+  
+  @media (max-width: 360px) {
+    font-size: 1rem;
+  }
 `;
 
 const ProjectCategory = styled.span`
@@ -199,7 +259,11 @@ const ProjectCategory = styled.span`
   font-weight: 300;
   display: block;
   margin-bottom: 1rem;
-  line-height: 1.4;
+  
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
 `;
 
 const ProjectDescription = styled.p`

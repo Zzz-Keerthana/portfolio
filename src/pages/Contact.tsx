@@ -63,6 +63,14 @@ const ContactSection = styled.section`
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+  
+  @media (max-width: 768px) {
+    padding: 6rem 3%;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 5rem 2%;
+  }
 `;
 
 const ContactTitle = styled.h2`
@@ -75,6 +83,14 @@ const ContactTitle = styled.h2`
   
   @media (max-width: 768px) {
     font-size: 2rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.8rem;
+  }
+  
+  @media (max-width: 360px) {
+    font-size: 1.6rem;
   }
 `;
 
@@ -92,6 +108,15 @@ const ContactSubtitle = styled.p`
     font-size: 1rem;
     margin-bottom: 3rem;
   }
+  
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  @media (max-width: 360px) {
+    font-size: 0.85rem;
+  }
 `;
 
 // Add ContentWrapper component
@@ -107,6 +132,10 @@ const ContentWrapper = styled.div`
     grid-template-columns: 1fr;
     gap: 3rem;
   }
+  
+  @media (max-width: 480px) {
+    gap: 2rem;
+  }
 `;
 
 const ContactForm = styled.form`
@@ -116,18 +145,30 @@ const ContactForm = styled.form`
   flex-direction: column;
   gap: 1.5rem;
   animation: ${fadeInLeft} 1s ease-out 0.7s both;
+  
+  @media (max-width: 480px) {
+    gap: 1.2rem;
+  }
 `;
 
 const FormGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  
+  @media (max-width: 480px) {
+    gap: 0.4rem;
+  }
 `;
 
 const Label = styled.label`
   font-size: 0.9rem;
   font-weight: 400;
   color: #cccccc;
+  
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+  }
 `;
 
 const Input = styled.input<InputProps>`
@@ -149,6 +190,11 @@ const Input = styled.input<InputProps>`
     border-color: #667eea;
     background: rgba(255, 255, 255, 0.08);
     box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+  }
+  
+  @media (max-width: 480px) {
+    padding: 0.8rem;
+    font-size: 0.9rem;
   }
 `;
 
@@ -174,6 +220,12 @@ const Textarea = styled.textarea<TextareaProps>`
     background: rgba(255, 255, 255, 0.08);
     box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
   }
+  
+  @media (max-width: 480px) {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    min-height: 120px;
+  }
 `;
 
 // Add ErrorMessage component
@@ -182,6 +234,10 @@ const ErrorMessage = styled.span`
   font-size: 0.85rem;
   margin-top: 0.25rem;
   font-weight: 300;
+  
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const SubmitButton = styled.button`
@@ -198,15 +254,21 @@ const SubmitButton = styled.button`
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
   
   &:hover {
-    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
   }
   
   &:disabled {
-    opacity: 0.7;
+    opacity: 0.6;
     cursor: not-allowed;
     transform: none;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+    align-self: stretch;
+    text-align: center;
   }
 `;
 

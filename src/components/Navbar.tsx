@@ -14,6 +14,17 @@ const slideIn = keyframes`
   }
 `;
 
+const slideDown = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 const glow = keyframes`
   0%, 100% {
     text-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
@@ -45,6 +56,18 @@ const NavbarContainer = styled.nav`
   
   @media (max-width: 768px) {
     padding: 1rem 2rem;
+    
+    &.scrolled {
+      padding: 0.8rem 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    padding: 1rem 1.5rem;
+    
+    &.scrolled {
+      padding: 0.8rem 1.5rem;
+    }
   }
 `;
 
@@ -57,6 +80,14 @@ const Logo = styled.div`
   span {
     color: #ffffff;
     font-weight: 300;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.4rem;
+  }
+  
+  @media (max-width: 360px) {
+    font-size: 1.2rem;
   }
 `;
 
@@ -116,10 +147,103 @@ const NavLinks = styled.div`
       font-size: 0.85rem;
     }
   }
+  
+  @media (max-width: 480px) {
+    display: none;
+  }
+`;
+
+const MobileMenuButton = styled.button`
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: #cccccc;
+  }
+  
+  @media (max-width: 480px) {
+    display: block;
+  }
+`;
+
+const MobileMenu = styled.div<{ isOpen: boolean }>`
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 99;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  opacity: ${props => props.isOpen ? 1 : 0};
+  visibility: ${props => props.isOpen ? 'visible' : 'hidden'};
+  transition: all 0.3s ease;
+  
+  @media (max-width: 480px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    animation: ${slideDown} 0.5s ease-out;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    &.active {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+    }
+  }
+`;
+
+const CloseButton = styled.button`
+  display: none;
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 2.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: #cccccc;
+    transform: rotate(90deg);
+  }
+  
+  @media (max-width: 480px) {
+    display: block;
+  }
 `;
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -138,27 +262,55 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
-    <NavbarContainer className={scrolled ? 'scrolled' : ''}>
-      <Logo>
-        <span>Portfolio</span>
-      </Logo>
+    <>
+      <NavbarContainer className={scrolled ? 'scrolled' : ''}>
+        <Logo>
+          <span>Portfolio</span>
+        </Logo>
+        
+        <NavLinks>
+          <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
+            Home
+          </Link>
+          <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>
+            About
+          </Link>
+          <Link to="/projects" className={location.pathname === '/projects' ? 'active' : ''}>
+            Projects
+          </Link>
+          <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>
+            Contact
+          </Link>
+        </NavLinks>
+        
+        <MobileMenuButton onClick={() => setMobileMenuOpen(true)}>
+          ☰
+        </MobileMenuButton>
+      </NavbarContainer>
       
-      <NavLinks>
-        <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
+      <MobileMenu isOpen={mobileMenuOpen}>
+        {mobileMenuOpen && (
+          <CloseButton onClick={closeMobileMenu}>×</CloseButton>
+        )}
+        <Link to="/" className={location.pathname === '/' ? 'active' : ''} onClick={closeMobileMenu}>
           Home
         </Link>
-        <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>
+        <Link to="/about" className={location.pathname === '/about' ? 'active' : ''} onClick={closeMobileMenu}>
           About
         </Link>
-        <Link to="/projects" className={location.pathname === '/projects' ? 'active' : ''}>
+        <Link to="/projects" className={location.pathname === '/projects' ? 'active' : ''} onClick={closeMobileMenu}>
           Projects
         </Link>
-        <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>
+        <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''} onClick={closeMobileMenu}>
           Contact
         </Link>
-      </NavLinks>
-    </NavbarContainer>
+      </MobileMenu>
+    </>
   );
 };
 

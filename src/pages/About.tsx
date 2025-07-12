@@ -52,11 +52,23 @@ const AboutSection = styled.section`
   padding: 8rem 2rem 6rem;
   background-color: #000000;
   color: #ffffff;
+  
+  @media (max-width: 768px) {
+    padding: 6rem 1.5rem 4rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 5rem 1rem 3rem;
+  }
 `;
 
 const Container = styled.div`
   max-width: 1000px;
   margin: 0 auto;
+  
+  @media (max-width: 480px) {
+    padding: 0 0.5rem;
+  }
 `;
 
 const SectionTitle = styled.h2`
@@ -80,10 +92,21 @@ const SectionTitle = styled.h2`
   @media (max-width: 768px) {
     font-size: 1.8rem;
     text-align: center;
+    margin-bottom: 2rem;
+    
+    &::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
   
   @media (max-width: 480px) {
     font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  @media (max-width: 360px) {
+    font-size: 1.4rem;
   }
 `;
 
@@ -96,6 +119,10 @@ const ContentWrapper = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 2rem;
   }
 `;
 
@@ -122,6 +149,14 @@ const AboutText = styled.div`
   
   @media (max-width: 480px) {
     font-size: 0.85rem;
+    
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    font-size: 0.8rem;
   }
 `;
 
@@ -142,6 +177,11 @@ const StyledVideo = styled.div`
   @media (max-width: 480px) {
     max-width: 280px;
     height: 320px;
+  }
+  
+  @media (max-width: 360px) {
+    max-width: 250px;
+    height: 280px;
   }
   
   video {
@@ -195,6 +235,14 @@ const StyledVideo = styled.div`
 const SkillsSection = styled.div`
   margin-top: 5rem;
   animation: ${fadeInUp} 1s ease-out 0.9s both;
+  
+  @media (max-width: 768px) {
+    margin-top: 4rem;
+  }
+  
+  @media (max-width: 480px) {
+    margin-top: 3rem;
+  }
 `;
 
 const SkillsTitle = styled.h3`
@@ -206,10 +254,16 @@ const SkillsTitle = styled.h3`
   @media (max-width: 768px) {
     font-size: 1.4rem;
     text-align: center;
+    margin-bottom: 1.5rem;
   }
   
   @media (max-width: 480px) {
     font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  @media (max-width: 360px) {
+    font-size: 1.1rem;
   }
 `;
 
@@ -221,6 +275,16 @@ const SkillsList = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 1rem;
+  }
+  
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.8rem;
+  }
+  
+  @media (max-width: 360px) {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.6rem;
   }
 `;
 
@@ -261,12 +325,35 @@ const SkillItem = styled.div`
   @media (max-width: 480px) {
     font-size: 0.8rem;
     padding: 0.6rem;
+    
+    span {
+      font-size: 0.9rem;
+      margin-right: 8px;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    
+    span {
+      font-size: 0.8rem;
+      margin-right: 6px;
+    }
   }
 `;
 
 const ExperienceSection = styled.div`
   margin-top: 5rem;
   animation: ${fadeInUp} 1s ease-out 1.1s both;
+  
+  @media (max-width: 768px) {
+    margin-top: 4rem;
+  }
+  
+  @media (max-width: 480px) {
+    margin-top: 3rem;
+  }
 `;
 
 const ExperienceTitle = styled.h3`
@@ -278,6 +365,16 @@ const ExperienceTitle = styled.h3`
   @media (max-width: 768px) {
     font-size: 1.5rem;
     text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  @media (max-width: 360px) {
+    font-size: 1.2rem;
   }
 `;
 
@@ -298,6 +395,10 @@ const Timeline = styled.div`
     @media (max-width: 576px) {
       left: 20px;
     }
+    
+    @media (max-width: 480px) {
+      left: 15px;
+    }
   }
 `;
 
@@ -308,6 +409,11 @@ const TimelineItem = styled.div`
   
   @media (max-width: 576px) {
     padding-left: 3rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding-left: 2.5rem;
+    padding-bottom: 2rem;
   }
   
   &::after {
@@ -324,6 +430,12 @@ const TimelineItem = styled.div`
     @media (max-width: 576px) {
       left: 20px;
     }
+    
+    @media (max-width: 480px) {
+      left: 15px;
+      width: 10px;
+      height: 10px;
+    }
   }
 `;
 
@@ -339,6 +451,14 @@ const TimelineContent = styled.div`
     background-color: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.3);
   }
+  
+  @media (max-width: 480px) {
+    padding: 1rem;
+  }
+  
+  @media (max-width: 360px) {
+    padding: 0.8rem;
+  }
 `;
 
 const JobTitle = styled.h4`
@@ -346,6 +466,14 @@ const JobTitle = styled.h4`
   font-weight: 500;
   margin-bottom: 0.5rem;
   color: #ffffff;
+  
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+  }
+  
+  @media (max-width: 360px) {
+    font-size: 1rem;
+  }
 `;
 
 const Company = styled.div`
@@ -353,12 +481,29 @@ const Company = styled.div`
   font-weight: 400;
   margin-bottom: 0.5rem;
   color: #cccccc;
+  
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 360px) {
+    font-size: 0.85rem;
+  }
 `;
 
 const JobDate = styled.div`
   font-size: 0.9rem;
   margin-bottom: 1rem;
   color: #aaaaaa;
+  
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  @media (max-width: 360px) {
+    font-size: 0.75rem;
+  }
 `;
 
 const JobDescription = styled.p`
@@ -366,6 +511,15 @@ const JobDescription = styled.p`
   line-height: 1.6;
   color: #cccccc;
   font-weight: 300;
+  
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 360px) {
+    font-size: 0.85rem;
+  }
 `;
 
 const About: React.FC = () => {

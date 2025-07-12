@@ -104,8 +104,12 @@ const HomeSection = styled.section`
   }
   
   @media (max-width: 768px) {
-    padding: 1rem;
+    padding: 1rem 0;
     min-height: 100vh;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 0.5rem 0;
   }
 `;
 
@@ -137,7 +141,12 @@ const Container = styled.div`
   
   @media (max-width: 768px) {
     gap: 1.5rem;
-    padding: 1rem;
+    padding: 0.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 1rem;
+    padding: 0.5rem;
   }
 `;
 
@@ -166,7 +175,7 @@ const TextContent = styled.div`
   
   @media (max-width: 480px) {
     padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
   }
 `;
 
@@ -233,10 +242,26 @@ const ImageContent = styled.div`
   
   @media (max-width: 480px) {
     margin-bottom: 0.5rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
     
     img {
-      height: 320px;
-      max-height: 50vh;
+      height: auto;
+      max-height: 40vh;
+      max-width: 90vw;
+      width: 100%;
+      display: block;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    img {
+      height: auto;
+      max-height: 35vh;
+      max-width: 95vw;
     }
   }
 `;
@@ -270,6 +295,7 @@ const Name = styled.h1`
   
   @media (max-width: 480px) {
     font-size: 1.6rem;
+    margin-bottom: 0.5rem;
   }
   
   @media (max-width: 360px) {
@@ -306,6 +332,7 @@ const Role = styled.h2`
   
   @media (max-width: 480px) {
     font-size: 1rem;
+    margin-bottom: 0.8rem;
   }
   
   @media (max-width: 360px) {
@@ -329,6 +356,7 @@ const Description = styled.p`
   @media (max-width: 968px) {
     text-align: center;
     font-size: 0.9rem;
+    margin: 0 auto 2rem;
   }
   
   @media (max-width: 768px) {
@@ -344,6 +372,11 @@ const Description = styled.p`
   
   @media (max-width: 480px) {
     font-size: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  @media (max-width: 360px) {
+    font-size: 0.7rem;
   }
 `;
 
@@ -402,6 +435,13 @@ const PrimaryButton = styled(Link)`
   @media (max-width: 480px) {
     width: 140px;
     font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  @media (max-width: 360px) {
+    width: 130px;
+    font-size: 0.75rem;
+    padding: 0.5rem 0.8rem;
   }
 `;
 
@@ -441,6 +481,13 @@ const SecondaryButton = styled(Link)`
   @media (max-width: 480px) {
     width: 140px;
     font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  @media (max-width: 360px) {
+    width: 130px;
+    font-size: 0.75rem;
+    padding: 0.5rem 0.8rem;
   }
 `;
 
