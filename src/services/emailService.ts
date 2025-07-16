@@ -8,10 +8,7 @@ interface EmailParams {
   message: string;
 }
 
-interface EmailJSResponseStatus {
-  status: number;
-  text: string;
-}
+// Removed unused EmailJSResponseStatus interface
 
 /**
  * EmailJS configuration
