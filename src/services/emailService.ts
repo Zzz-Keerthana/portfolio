@@ -30,33 +30,7 @@ const EMAIL_CONFIG = {
   TEMPLATE_ID: 'template_8ns6p6b'  // Make sure this matches your actual template ID
 };
 
-/**
- * Mock EmailJS functionality for development
- * When you install EmailJS, replace this with actual EmailJS implementation
- */
-const mockEmailJS = {
-  init: (userId: string) => {
-    console.log('Initialized EmailJS with user ID:', userId);
-  },
-  send: async (serviceId: string, templateId: string, params: any): Promise<EmailJSResponseStatus> => {
-    console.log('Email parameters:', params);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    return {
-      status: 200,
-      text: 'OK'
-    };
-  },
-  sendForm: async (serviceId: string, templateId: string, form: HTMLFormElement, userId: string): Promise<EmailJSResponseStatus> => {
-    console.log('Form data sent');
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    return {
-      status: 200,
-      text: 'OK'
-    };
-  }
-};
+// Removed unused mockEmailJS object
 
 /**
  * Initialize EmailJS with your user ID

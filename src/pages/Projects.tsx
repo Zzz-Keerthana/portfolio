@@ -32,16 +32,7 @@ const fadeInUp = keyframes`
   }
 `;
 
-const fadeInLeft = keyframes`
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-`;
+// Removed unused fadeInLeft animation
 
 const glow = keyframes`
   0%, 100% {
@@ -266,22 +257,7 @@ const ProjectCategory = styled.span`
   }
 `;
 
-const ProjectDescription = styled.p`
-  font-size: 0.9rem;
-  color: #aaaaaa;
-  line-height: 1.6;
-  font-weight: 300;
-  margin-bottom: 1rem;
-  max-height: 4.8rem;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  
-  @media (max-width: 768px) {
-    font-size: 0.85rem;
-  }
-`;
+// Removed unused ProjectDescription component
 
 const TechList = styled.ul`
   display: flex;
@@ -531,72 +507,7 @@ const ModalButton = styled.a<ModalButtonProps>`
   }
 `;
 
-const PrimaryButton = styled.a`
-  background: linear-gradient(to right, #5FFBF1, #7A58E3);
-  color: white;
-  padding: 0.9rem 2rem;
-  font-size: 1.1rem;
-  font-weight: 500;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-  
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 7px 20px rgba(95, 251, 241, 0.4);
-  }
-`;
-
-const SecondaryButton = styled.a`
-  background-color: transparent;
-  color: #333;
-  padding: 0.9rem 2rem;
-  font-size: 1.1rem;
-  font-weight: 500;
-  border: 1px solid rgba(95, 251, 241, 0.3);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-  
-  &:hover {
-    background-color: rgba(95, 251, 241, 0.05);
-    transform: translateY(-3px);
-  }
-`;
-
-const FeatureList = styled.div`
-  margin: 1.5rem 0;
-  
-  h4 {
-    color: #333;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-    
-    li {
-      color: #666;
-      margin-bottom: 0.5rem;
-      padding-left: 1rem;
-      position: relative;
-      
-      &:before {
-        content: '▸';
-        color: #5FFBF1;
-        position: absolute;
-        left: 0;
-      }
-    }
-  }
-`;
+// Removed unused PrimaryButton, SecondaryButton, and FeatureList components
 
 const Projects: React.FC = () => {
   const [ref, inView] = useInView({
@@ -605,7 +516,6 @@ const Projects: React.FC = () => {
   });
   
   const [selectedProject, setSelectedProject] = useState<ProjectType | null>(null);
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   
   const projects: ProjectType[] = [
     {
@@ -879,8 +789,6 @@ An advanced computer vision system designed for industrial warehouse environment
               <ProjectCard
                 key={index}
               onClick={() => openProjectModal(project)}
-              onMouseEnter={() => setHoveredCard(index)}
-              onMouseLeave={() => setHoveredCard(null)}
               style={{
                 animationDelay: inView ? `${index * 0.1}s` : '0s'
               }}

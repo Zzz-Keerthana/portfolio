@@ -55,14 +55,7 @@ const glow = keyframes`
   }
 `;
 
-const imageFloat = keyframes`
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-`;
+// Removed unused imageFloat animation
 
 // Styled components for Home
 const HomeSection = styled.section`
@@ -491,18 +484,7 @@ const SecondaryButton = styled(Link)`
   }
 `;
 
-// Home component without framer-motion
-const BadgeNew = styled.div`
-  display: inline-block;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding: 0.3rem 0.8rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  border-radius: 30px;
-  margin-bottom: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-`;
+// Removed unused BadgeNew component
 
 const Home = () => {
   return (

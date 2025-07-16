@@ -1,4 +1,4 @@
-import { useState, FormEvent, ChangeEvent, useRef } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 import { sendEmail } from '../services/emailService';
 
 // Form data interface

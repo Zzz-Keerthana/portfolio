@@ -34,20 +34,7 @@ const FooterContent = styled.div`
   }
 `;
 
-const FooterLogo = styled.div`
-  font-size: 1.8rem;
-  font-weight: 300;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-  
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
-  }
-  
-  @media (max-width: 480px) {
-    font-size: 1.3rem;
-  }
-`;
+// Removed unused FooterLogo component
 
 const SocialLinks = styled.div`
   display: flex;

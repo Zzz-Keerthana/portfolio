@@ -523,7 +523,7 @@ const JobDescription = styled.p`
 `;
 
 const About: React.FC = () => {
-  const [aboutRef, aboutInView] = useInView({
+  const [aboutRef] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });

@@ -371,7 +371,7 @@ const FormStatus = styled.div<{ success?: boolean }>`
 `;
 
 const Contact: React.FC = () => {
-  const [ref, inView] = useInView({
+  const [ref] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
