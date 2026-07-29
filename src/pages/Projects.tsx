@@ -283,26 +283,6 @@ const TechItem = styled.li`
   }
 `;
 
-const ProjectLinks = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 1rem;
-`;
-
-const ProjectLink = styled.a`
-  color: #cccccc;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  padding: 0.5rem;
-  border-radius: 50%;
-  
-  &:hover {
-    color: #64ffda;
-    transform: translateY(-3px);
-    background: rgba(100, 255, 218, 0.1);
-  }
-`;
-
 const ProjectModal = styled.div`
   position: fixed;
   top: 0;
