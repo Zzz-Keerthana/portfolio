@@ -197,7 +197,7 @@ const Home: React.FC = () => {
               animate={heroInView ? "visible" : "hidden"}
               variants={textVariants}
             >
-              Full Stack Developer & ML Engineer
+              Full Stack Developer & AI Engineer
             </Role>
             <Description
               custom={4}

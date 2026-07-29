@@ -495,11 +495,10 @@ const Home = () => {
           <Name>
             Keerthana S
           </Name>
-          <Role>Full Stack Developer & ML Engineer</Role>
-          <Description>
-            I'm a versatile developer with 2 years of experience in Full Stack Development and Machine Learning.
-            Currently working at OwlX Fintech, specializing in building exceptional digital experiences.
-          </Description>
+          <Role>Full Stack Developer & AI Engineer</Role>
+        <Description>
+  Software Engineer at JPMorgan Chase & Co. (via mthree) with 3+ years of experience building secure fintech systems, AI/ML-powered solutions, and data-intensive applications with a strong focus on backend engineering and analytics.
+</Description>
           <ButtonContainer>
             <PrimaryButton to="/projects">
               View Projects

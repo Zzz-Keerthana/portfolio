@@ -206,7 +206,7 @@ const Footer: React.FC = () => {
         <Copyright>
           <p>
             Designed & Built with <span className="heart">❤</span> by{' '}
-            <a href="mailto:keerthana@example.com">Keerthana S</a>
+            <a href="mailto:zkeerthanaz@gmail.com">Keerthana S</a>
           </p>
           <p>© {new Date().getFullYear()} All Rights Reserved</p>
         </Copyright>

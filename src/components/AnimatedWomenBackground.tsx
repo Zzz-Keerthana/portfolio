@@ -161,7 +161,7 @@ const WomanFigure = styled(motion.div)<{ position: number }>`
   left: ${props => 12 + props.position * 20}%;
   width: 60px;
   height: 120px;
-  z-index: 5;
+  z-index: 20;
   
   @media (max-width: 768px) {
     width: 45px;

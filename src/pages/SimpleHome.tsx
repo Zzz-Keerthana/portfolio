@@ -111,7 +111,7 @@ const SimpleHome: React.FC = () => {
     <HomeSection>
       <Container>
         <Name>Your Name</Name>
-        <Role>Full Stack Developer & ML Engineer</Role>
+        <Role>Full Stack Developer & AI Engineer</Role>
         <Description>
           I'm a versatile developer with 2 years of experience in Full Stack Development and Machine Learning.
           Currently working at OwlX Fintech, specializing in building exceptional digital experiences.

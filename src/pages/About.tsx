@@ -126,6 +126,43 @@ const ContentWrapper = styled.div`
   }
 `;
 
+const FocusGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const FocusCard = styled.div`
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(100, 255, 218, 0.35);
+  }
+
+  h4 {
+    color: #ffffff;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: #cccccc;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+`;
+
 const AboutText = styled.div`
   color: #cccccc;
   font-size: 0.95rem;
@@ -539,34 +576,51 @@ const About: React.FC = () => {
   });
   
   const skills = [
-    { name: 'JavaScript', icon: '🟨' },
-    { name: 'TypeScript', icon: '🔵' },
-    { name: 'React', icon: '⚛️' },
-    { name: 'Node.js', icon: '🟢' },
     { name: 'Python', icon: '🐍' },
-    { name: 'TensorFlow', icon: '🧠' },
-    { name: 'PyTorch', icon: '🔥' },
-    { name: 'MongoDB', icon: '🍃' },
-    { name: 'SQL', icon: '🗄️' },
+    { name: 'Django', icon: '🧩' },
+    { name: 'React', icon: '⚛️' },
+    { name: 'TypeScript', icon: '🔵' },
+    { name: 'PostgreSQL', icon: '🗄️' },
     { name: 'AWS', icon: '☁️' },
     { name: 'Docker', icon: '🐳' },
-    { name: 'Git', icon: '📝' },
+    { name: 'Temporal', icon: '⏱️' },
+    { name: 'Celery', icon: '⚡' },
+    { name: 'Redis', icon: '🔴' },
+    { name: 'OpenCV', icon: '📷' },
+    { name: 'NumPy / Pandas / DataFrames', icon: '📊' },
+    { name: 'Databricks / Data Pond', icon: '🧱' },
+    { name: 'TensorFlow / Keras', icon: '🧠' },
+    { name: 'Go', icon: '🚀' },
   ];
   
   const experiences = [
     {
-      title: 'Full Stack Developer',
-      company: 'OwlX Fintech',
-      date: 'January 2023 - Present',
+      title: 'Software Engineer',
+      company: 'JPMorgan Chase & Co. (via mthree)',
+      date: 'March 2026 - Present',
       description:
-        'Working on cutting-edge financial technology solutions, building robust applications with React, Node.js, and cloud infrastructure. Implementing innovative features and ensuring high performance and security standards.',
+        'Contributing to enterprise financial systems and large-scale analytics workflows with Python, Pandas, NumPy, and data-driven backend services focused on performance and reliability.',
     },
     {
-      title: 'Machine Learning Engineer',
-      company: 'NaTech Electronics',
-      date: 'January 2022 - December 2022',
+      title: 'Software Engineer',
+      company: 'OwlX Fintech',
+      date: 'September 2024 - December 2025',
       description:
-        'Developed and deployed machine learning models for predictive maintenance and quality control in electronics manufacturing. Worked with TensorFlow and Python to analyze sensor data and improve production efficiency.',
+        'Built scalable Django APIs, payment integrations, reconciliation workflows, and distributed services using Temporal, Celery, Redis, PostgreSQL, and AWS.',
+    },
+    {
+      title: 'Software Engineer',
+      company: 'Nav Tech Electronics',
+      date: 'January 2024 - January 2025',
+      description:
+        'Developed an AI-based driver monitoring system with computer vision and machine learning on embedded hardware for real-time behavioral analysis.',
+    },
+    {
+      title: 'Software Engineer',
+      company: 'Qualitas',
+      date: 'September 2023 - December 2023',
+      description:
+        'Created computer vision systems for long-distance QR code detection and decoding, improving reliability under challenging real-world conditions.',
     },
   ];
 
@@ -577,22 +631,39 @@ const About: React.FC = () => {
           <SectionTitle>About Me</SectionTitle>
           
           <ContentWrapper>
-            <AboutText>
-              <p>
-                Hello! I'm a <strong>Full Stack Developer and Machine Learning Engineer</strong> with 2 years of professional experience building exceptional digital experiences. I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between.
-              </p>
-              <p>
-                My journey in tech began when I was introduced to programming at university, where I quickly fell in love with the blend of creativity and logic that coding offers. Fast-forward to today, I've had the privilege of working at <strong>an electronics manufacturing company</strong> and <strong>a fintech startup</strong>.
-              </p>
-              <p>
-                My focus these days is on building accessible, inclusive products and digital experiences for a variety of clients. I'm passionate about leveraging cutting-edge technologies to solve complex problems and create intuitive user experiences.
-              </p>
-              <p>
-                When I'm not at the computer, I'm usually reading tech blogs, exploring the latest advancements in AI, or enjoying outdoor activities to maintain a healthy work-life balance.
-              </p>
-            </AboutText>
+            <div>
+              <AboutText>
+                <p>
+                  Hello! I'm <strong>Keerthana S</strong>, a full-stack developer and AI engineer with 3+ years of experience building secure, scalable digital products.
+                </p>
+                <p>
+                  My work has spanned <strong>fintech systems</strong>, <strong>enterprise data workflows</strong>, and <strong>computer vision applications</strong>, with a strong emphasis on backend engineering, AI/ML solutions, and analytics-driven products.
+                </p>
+                <p>
+                  I enjoy turning complex requirements into reliable systems using Python, Django, React, PostgreSQL, AWS, OpenCV, TensorFlow, and data tools like NumPy and Pandas.
+                </p>
+                <p>
+                  When I'm not coding, I'm usually exploring the latest in AI, data engineering, or building side projects that connect intelligent automation with practical user experiences.
+                </p>
+              </AboutText>
+
+              <FocusGrid>
+                <FocusCard>
+                  <h4>Fintech & Backend Systems</h4>
+                  <p>Designing secure APIs, transaction workflows, and distributed services for payments, reconciliation, and financial operations.</p>
+                </FocusCard>
+                <FocusCard>
+                  <h4>AI / ML & Computer Vision</h4>
+                  <p>Building real-time monitoring systems, predictive models, and intelligent automation for product and safety use cases.</p>
+                </FocusCard>
+                <FocusCard>
+                  <h4>Data Analysis & Engineering</h4>
+                  <p>Creating efficient data pipelines and analytics workflows for high-volume datasets using Python and modern data tools.</p>
+                </FocusCard>
+              </FocusGrid>
+            </div>
             
-                         <StyledVideo>
+            <StyledVideo>
                <video 
                  autoPlay 
                  loop 
